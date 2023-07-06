@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MySuite">
+    <test name="Test1">
+        <parameter name="c" value="3"/>
+        <parameter name="d" value="3"/>
+        <groups>
+            <run>
+                <include name="unit"/>
+                <exclude name="sanity"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="testNg001.test1"/>
+        </classes>
+    </test>
+    <test name="Test2">
+        <classes>
+            <class name="testNg001.test2"/>
+        </classes>
+    </test>
+<!--Parallel Testing on multiple browsers-->
+    <test name="Chrome Test">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="ParallelTestingTestNG.ParallelTest" />
+        </classes>
+    </test>
+    <test name="Firefox Test">
+        <parameter name="browser" value="firefox" />
+        <classes>
+            <class name="ParallelTestingTestNG.ParallelTest" />
+        </classes>
+    </test>
+    <test name="Safari Test">
+        <parameter name="browser" value="safari" />
+        <classes>
+            <class name="ParallelTestingTestNG.ParallelTest" />
+        </classes>
+    </test>
+    <test name="Screenshot Test">
+        <classes>
+            <class name="ExtentReports_Selenium.SampleTest"/>
+        </classes>
+    </test>
+</suite>
+
